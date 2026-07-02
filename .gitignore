@@ -1,0 +1,15 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Node / frontend
+frontend/node_modules/
+frontend/dist/
+
+# Data (large CSVs live in archive/ — keep out of git)
+archive/*.csv
+
+# OS
+.DS_Store
