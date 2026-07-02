@@ -137,20 +137,25 @@ The decisions matter more than any single score:
 
 ```
 transfer-data-analysis/
+├── README.md
+├── PROGRESS.md                 full decision log (every judgment call, tested & rejected)
 ├── backend/
+│   ├── main.py                 thin FastAPI app: CORS + mounts routers + /health
+│   ├── config.py               env config (ALLOWED_ORIGINS)
+│   ├── serialization.py        records(): DataFrame -> JSON-safe
+│   ├── routers/                analytics.py · clubs.py · model.py  (API by domain)
 │   ├── data.py                 master DataFrame + filters (built once at import)
-│   ├── analytics.py            one pandas function per analysis/endpoint
+│   ├── analytics.py            analysis functions (trends / clubs / origins sections)
 │   ├── model.py                value + fee models, feature importance, agreement
-│   ├── main.py                 FastAPI app (records() JSON-safe serialiser)
 │   ├── data_extraction/        transfers / clubs / players / valuations / stats loaders
-│   └── requirements.txt
+│   └── requirements.txt        pinned
 ├── frontend/
 │   └── src/
 │       ├── App.jsx             shell: responsive side nav + lazy MFE mounts
 │       ├── mfe-analytics/      Transfer Analytics micro-frontend
 │       ├── mfe-predictor/      Value Predictor micro-frontend
 │       └── components/         charts, tables, stat cards (Recharts)
-└── archive/                    Transfermarkt CSVs + PROGRESS.md (full decision log)
+└── archive/                    Transfermarkt CSVs
 ```
 
 ---
