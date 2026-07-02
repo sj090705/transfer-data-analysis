@@ -172,7 +172,7 @@ The Vite dev server proxies `/api` to the backend, so no CORS setup is needed in
 
 ## Known limitations
 
-Stated plainly (full log in `archive/PROGRESS.md`):
+Stated plainly (full log in `PROGRESS.md`):
 
 - **Older seasons are under-recorded** in the source data — e.g. Agüero's 2011 move is absent
   entirely; raw transfer counts grow ~8× from 2009 to 2024. Treat pre-~2015 figures as lower bounds.

@@ -1,5 +1,15 @@
 # Transfer Analytics Dashboard — Progress Log
 
+## Improvements / next up
+- REMOVE UNDISCLOSED-FEE TRANSFERS more consistently. Undisclosed fees are NaN and already
+  drop out of fee-based analyses (is_paid requires fee>0), but they still count toward volume
+  / recruitment. Decide one policy (exclude everywhere vs keep-for-volume) and apply it uniformly.
+- UPDATE WINTER-TRANSFER LOGIC. The prior-season stats join is leakage-safe but for JANUARY
+  (winter-window) moves it ignores the current half-season the club has already seen. Make the
+  stats date-aware for winter deals (appearances before transfer_date) rather than only using
+  last completed season. Also sanity-check season assignment for winter moves.
+- (deploy) src/api.js reading VITE_API_URL + src/theme.js (see structure-refactor notes below).
+
 ## Project Goal
 Build a full-stack football transfer analytics dashboard as a resume project.
 Teaching/learning format — understand every line before moving on.
