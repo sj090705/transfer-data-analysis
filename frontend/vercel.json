@@ -1,0 +1,12 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "rewrites": [
+    {
+      "comment": "Proxy API calls to the backend so the frontend's /api/... paths work in prod (same-origin, no CORS). Replace the destination host with your deployed backend URL.",
+      "source": "/api/:path*",
+      "destination": "https://transfer-data-analysis.onrender.com/api/:path*"
+    }
+  ]
+}
