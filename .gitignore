@@ -8,8 +8,16 @@ venv/
 frontend/node_modules/
 frontend/dist/
 
-# Data (large CSVs live in archive/ — keep out of git)
-archive/*.csv
+# Large CSVs the app does NOT use — never commit these
+archive/game_lineups.csv
+archive/game_events.csv
+archive/club_games.csv
+archive/national_teams.csv
+
+# NOTE: the USED CSVs (transfers, players, player_valuations, games, appearances,
+# clubs, competitions, countries) MUST be shipped for the backend to work.
+# appearances.csv is 148MB (> GitHub's 100MB limit) → track it with Git LFS
+# (see .gitattributes) or host the data in a bucket and download at startup.
 
 # OS
 .DS_Store

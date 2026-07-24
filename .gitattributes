@@ -1,0 +1,7 @@
+# Ship the large used data files via Git LFS (appearances.csv is 148MB, over
+# GitHub's 100MB hard limit). Run once:  git lfs install
+archive/appearances.csv     filter=lfs diff=lfs merge=lfs -text
+archive/player_valuations.csv filter=lfs diff=lfs merge=lfs -text
+archive/players.csv         filter=lfs diff=lfs merge=lfs -text
+archive/games.csv           filter=lfs diff=lfs merge=lfs -text
+archive/transfers.csv       filter=lfs diff=lfs merge=lfs -text
